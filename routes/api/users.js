@@ -92,7 +92,7 @@ router.post(
 
       const payload = {
         user: {
-          id: user.id, // WE CAN USE 'id' instead of '_id' as described in mongoDB
+          id: user.id, // WE CAN USE 'id' instead of '_id' as described in mongoDB; when user is saved in the DB, it generates _id in the server
         },
       };
       // why jwtToken??;

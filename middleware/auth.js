@@ -17,6 +17,6 @@ module.exports = function (req, res, next) {
     req.user = decoded.user; // decoded.user will have the user from the PAYLOAD (FROM THE DATABASE)
     next();
   } catch (err) {
-    res.statu(401).json({ msg: 'Token is not valid' });
+    res.status(401).json({ msg: 'Token is not valid' });
   }
 };
