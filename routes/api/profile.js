@@ -113,9 +113,20 @@ router.post(
       console.error(err.message);
       res.status(500).send('Server Error');
     }
-
-    res.send('Hellow');
   }
 );
+
+// @route       GET api/profile
+// @desc        Get all profiles
+// @access      public
+router.get('/', async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+    res.json(profiles);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;
