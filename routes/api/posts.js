@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator/check');
 
-// @route       GET api/post
-// @desc        Test route
-// @access      Public
+const auth = require('../../middleware/auth');
 
+// @route       POST api/post
+// @desc        Create a post
+// @access      Private
 router.get('/', (req, res) => res.send('Post route'));
 
 module.exports = router;
