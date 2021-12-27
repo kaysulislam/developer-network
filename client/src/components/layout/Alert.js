@@ -12,7 +12,7 @@ const Alert = ({ alerts }) =>
   ));
 
 Alert.propTypes = {
-  alerts: PropTypes.func.isRequired,
+  alerts: PropTypes.array,
 };
 
 // map alert state to the props from all state to alerts (from the alertReducer)

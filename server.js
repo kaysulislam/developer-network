@@ -1,13 +1,24 @@
 const express = require('express');
 const connectDB = require('./config/db');
+//add cors
+const cors = require('cors');
+const corsOptions = {
+  origin: '*',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
+//added cors
 
 const app = express();
+
 //connect DATABASE
 connectDB();
 
 // Init Middleware
-app.use(express.json({ extended: false }));
 
+app.use(express.json({ extended: false }));
+app.use(cors(corsOptions)); // Use this after the variable declaration
 app.get('/', (req, res) => res.send('API Running'));
 
 // Define routes
