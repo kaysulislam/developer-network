@@ -17,12 +17,12 @@ const Register = () => {
       [e.target.name]: e.target.value,
     });
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Password do not match');
     } else {
-      console.log(formData);
+      console.log('Success');
     }
   };
   return (
